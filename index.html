@@ -12,7 +12,7 @@
         body {
             background-color: #E5E5E5;
             color: black;
-            font-family: Trebuchet MS, sans-serif;
+            font-family: "Trebuchet MS", sans-serif;
             font-size: 20px;
             line-height: 25px;
             margin: 0;
@@ -43,6 +43,7 @@
 
         a {
             color: #11AAA7;
+            text-decoration: none;
         }
 
         a:visited {
@@ -63,6 +64,14 @@
             color: #11AAA7;
         }
 
+        .at-symbol {
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        p {
+            margin: 10px 0;
+        }
+
         .heart {
             position: absolute;
             font-size: 50px;
@@ -77,8 +86,16 @@
         <img src="frog.png" alt="Logo">
 
         <h1>Hi! I'm <span class="highlight">Mark</span> 'eul' <span class="highlight">Fours</span></h1>
-        <p>I'm a developer and I like C++, Rust, and Reverse Engineering.<br/>
-        Currently working full-time at Meeble on the development of Project X.</p>
+        <p>
+          <strong>Software Engineer <span class="at-symbol">@</span> Lesta Games.</strong></br>
+          <strong>Tech Author.</strong>
+          <strong>Writer <span class="at-symbol">@</span> AST (pen name)</strong>
+        </p>
+        <p>
+          I'm a passionate developer who loves <span class="highlight">C++</span>, 
+          <span class="highlight">Rust</span>, and <span class="highlight">Reverse Engineering</span>.<br>
+          Currently working full-time at Lesta on the development of <span class="highlight">Project X</span>.
+        </p>
 
         <p>
             <a href="https://github.com/eulw" target="_blank">github</a> |
@@ -89,6 +106,7 @@
         </p>
     </div>
 
+    <!-- Hearts & frogs -->
     <div class="heart" style="top: 5%; left: 5%;">💙</div>
     <div class="heart" style="top: 10%; left: 50%;">💙</div>
     <div class="heart" style="top: 15%; left: 90%;">💙</div>
@@ -118,9 +136,8 @@
 
     <script>
         const hearts = document.querySelectorAll('.heart');
-
         hearts.forEach(heart => {
-            const randomRotation = Math.floor(Math.random() * 91) - 45; // -45 до 45 градусов
+            const randomRotation = Math.floor(Math.random() * 91) - 45;
             heart.style.transform = `rotate(${randomRotation}deg)`;
         });
     </script>
